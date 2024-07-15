@@ -1,2 +1,3 @@
 # idx_EducationPlatform
-1. Migrating Project onto Github 
+1. Uses Whitenoise to handle static files
+2. 
