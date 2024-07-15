@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Course(models.Model): 
     # fields of the model 
-    course_id = models.IntegerField(primary_key=True)
+    course_id = models.IntegerField(null=True)
     course = models.IntegerField(null=True)
     lesson_name = models.CharField(max_length=200, null=True) 
-    lesson_num = models.IntegerField(null=True)
+    lesson_num = models.IntegerField(primary_key=True)
     description = models.TextField(null=True) 
     topics = models.TextField(null=True)
     activites = models.TextField(null=True)
@@ -19,10 +19,10 @@ class Course(models.Model):
         return self.lesson_name
     
     def topics_as_list(self):
-        return self.topics.split(':')
+        return self.topics.split('-')
     
     def activites_as_list(self):
-        return self.activites.split('-')
+        return self.activites.split(':')
     
 
 class Student(models.Model): 

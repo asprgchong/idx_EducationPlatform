@@ -10,12 +10,26 @@
 </head>
 <body>
     <div class="content">
-        <h1>{{username}}</h1>
-        <h1>Introduction to Python (4 Week Course)</h1>
-        <div class='subLesson'>
-            {% for each in courses %}
-                <a href={{each.course_id}} class="lessonName"><h2>{{each.lesson_name}}</h2></a>
-            {% endfor %}
+        <div class="courseCard">
+            <h1>Introduction to Python (4 Week Course)</h1>
+            <div class='subLesson'>
+                {% for each in courses %}
+                    {% if each.course_id == 1 %}
+                        <a href={{each.lesson_num}} class="lessonName"><h2>{{each.lesson_name}}</h2></a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="courseCard">
+            <h1>Web Development and Intermediate Python (4 Week Course)</h1>
+            <div class='subLesson'>
+                {% for each in courses %}
+                    {% if each.course_id == 2 %}
+                        <a href={{each.course_id}} class="lessonName"><h2>{{each.lesson_name}}</h2></a>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>

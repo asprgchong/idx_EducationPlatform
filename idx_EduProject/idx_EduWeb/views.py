@@ -9,10 +9,10 @@ from django.contrib import messages
 from django.contrib.auth import logout
 
 # Create your views here.
-def index(request, course_id):
+def index(request, lesson_num):
     # courses = Course.objects.all()  # Getting all the courses from database
     try:
-        each = Course.objects.get(pk=course_id)
+        each = Course.objects.get(pk=lesson_num)
         if not request.user.is_authenticated:
             return redirect('/login/')
         return render(request, 'idx_EduWeb/index.html/', {'courses': each})
