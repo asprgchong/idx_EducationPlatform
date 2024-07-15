@@ -1,0 +1,49 @@
+{% extends 'idx_EduWeb/base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course App</title>
+    <link rel="stylesheet" href="{% static 'idx_EduWeb/style.css' %}">
+</head>
+<body>
+    <div class="courseCard content">
+        <h1>{{courses.course_id}}. {{ courses.lesson_name }}</h1>
+        <h3>{{ courses.description }}</h3>
+        <div>
+            <h3>Topics Covered:</h5>
+            <ul id="topics">
+                {% for each in courses.topics_as_list %}
+                    <li>{{each}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h3>Practice Activites:</h5>
+            <ul id="activites">
+                {% for each in courses.activites_as_list %}
+                    <li>{{each}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="videoLesson">
+            <h2>Video Lesson Recording</h2>
+            <div>
+                <video>
+                    <source src="{{course.lesson_content}}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="slides">
+            <h2>Lesson Slides</h2>
+            <iframe src={{courses.lesson_content}} width="840" height="680" allow="autoplay"></iframe>
+        </div>
+        <div>
+            <h2>Homework Task</h2>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock content %}

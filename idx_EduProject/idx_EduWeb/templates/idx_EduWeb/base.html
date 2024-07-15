@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static '/idx_EduWeb/style.css' %}">
+    </head>
+    <body>
+        <nav class="navBar">
+            <div>
+                <a href="/"><img src="{% static '/idx_EduWeb/Logo.png' %}" /></a>
+            </div>
+            <ul class="navOption">
+                <a href="/"><li>Your Courses</li></a>
+                <a href="/about"><li>About IDX Education</li></a>
+            </ul>
+            <ul class="navProfile">
+                <a href="/profile"><li>Your Profile</li></a>
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+
+        <div class="footer""></div>
+    </body>
+</html>

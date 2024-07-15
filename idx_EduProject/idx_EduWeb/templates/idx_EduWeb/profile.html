@@ -1,0 +1,17 @@
+{% extends 'idx_EduWeb/base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course App</title>
+</head>
+<body>
+    <div class="courseCard content">
+        <h1>Hello {{ profile }}</h1>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
+{% endblock content %}
